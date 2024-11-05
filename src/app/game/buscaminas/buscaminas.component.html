@@ -1,0 +1,15 @@
+<div class="w-full h-screen flex justify-center items-center bg-black"> 
+
+  <div class="grid">
+    <div *ngFor="let row of cuadrilla; let rowIndex = index">
+      <button *ngFor="let cell of row; let colIndex = index"
+      [class.mine]="cell.tieneMina && cell.revelada"
+      [class.revealed]="cell.revelada"
+      (click)="revelarCelda(rowIndex, colIndex)">
+      {{ cell.revelada ? (cell.tieneMina ? "perdiste" : cell.minasAlrededor || '') : '' }}
+    </button>
+  </div>
+</div>
+</div>
+<div *ngIf="value">
+</div>
